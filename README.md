@@ -29,7 +29,7 @@ Steps to Download and Run Locally
 
 1. Clone the Repository
   First, clone the repository to your local machine:
-`git clone https://github.com/yourusername/your-repository-name.git`
+`git clone https://github.com/YoussefKhalidAli/maid.cc_Application.git`
 
 2. Navigate to the Project Directory
 `cd your-repository-name`
