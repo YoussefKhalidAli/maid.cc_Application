@@ -1,0 +1,5 @@
+.user_container {
+  display: flex; /* Use flexbox layout */
+  flex-wrap: wrap; /* Allow wrapping of cards if there's not enough space */
+  justify-content: center;
+}

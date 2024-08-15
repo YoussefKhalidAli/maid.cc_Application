@@ -1,0 +1,21 @@
+<header class="header">
+  <!-- Back button to navigate to the home page -->
+  <button
+    class="back-button"
+    *ngIf="showBackArrow"
+    (click)="goBack()"
+    aria-label="Go back"
+  >
+    <span class="arrow"></span>
+  </button>
+  <div class="search-container">
+    <!-- Search input to filter users -->
+    <input
+      type="number"
+      class="search-bar"
+      placeholder="Search..."
+      [(ngModel)]="searchQuery"
+      (input)="onSearchInput()"
+    />
+  </div>
+</header>

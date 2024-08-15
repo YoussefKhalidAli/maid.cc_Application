@@ -1,0 +1,31 @@
+<div *ngIf="isLoadingUsers$ | async; else userContent">
+  <div class="loading-spinner">
+    <div class="spinner"></div>
+    <p>Loading...</p>
+  </div>
+</div>
+
+<ng-template #userContent>
+  <div *ngIf="users$ | async as users">
+    <div
+      *ngIf="users && users.length > 0; else noUsersContent"
+      class="container"
+    >
+      <div
+        *ngFor="let user of users"
+        class="user-card"
+        [attr.id]="user.id"
+        (click)="viewUserDetails(user.id)"
+      >
+        <img [src]="user.avatar" alt="User Image" class="user-image" />
+        <div class="user-info">
+          <h2 class="user-name">{{ user.first_name }} {{ user.last_name }}</h2>
+          <p class="user-email">{{ user.email }}</p>
+        </div>
+      </div>
+    </div>
+    <ng-template #noUsersContent>
+      <p>No users with this id exists</p>
+    </ng-template>
+  </div>
+</ng-template>

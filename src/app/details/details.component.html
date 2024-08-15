@@ -1,0 +1,21 @@
+<div *ngIf="isLoadingUser$ | async; else userContent">
+  <div class="loading-spinner">
+    <div class="spinner"></div>
+    <p>Loading...</p>
+  </div>
+</div>
+
+<ng-template #userContent>
+  <div class="user-details-card">
+    <div *ngIf="user$ | async as user">
+      <h1>{{ user.first_name + " " + user.last_name }}</h1>
+      <div class="user-avatar">
+        <img
+          [src]="user.avatar"
+          alt="{{ user.first_name + ' ' + user.last_name }}'s avatar"
+        />
+      </div>
+      <h3>Email: {{ user.email }}</h3>
+    </div>
+  </div>
+</ng-template>
